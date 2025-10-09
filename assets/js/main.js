@@ -1,3 +1,4 @@
+
 (function(){
   const forms = document.querySelectorAll('form[data-validate]');
   forms.forEach(f=>{

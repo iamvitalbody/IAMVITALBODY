@@ -1,10 +1,11 @@
+
 (function(){
   const KEY='iamvitalbody_consent_v1';
   const bar=document.getElementById('cookiebar');
   const acceptBtn=document.getElementById('cookie-accept');
   const rejectBtn=document.getElementById('cookie-reject');
   const loadScripts=()=>{
-    // Añade aquí scripts analíticos o chat solo tras consentimiento
+    // Añade aquí scripts analíticos/chat solo tras consentimiento
   };
   const saved=localStorage.getItem(KEY);
   if(saved==='accepted'){ loadScripts(); }

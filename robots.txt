@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.iamvitalbody.com/sitemap.xml
+Sitemap: https://iamvitalbody.es/sitemap.xml
