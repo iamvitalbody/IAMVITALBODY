@@ -22,13 +22,31 @@
     h1{font-size:clamp(1.8rem,4.8vw,3rem);margin:.2rem 0 .4rem}
     h2{font-size:clamp(1.2rem,2.5vw,1.6rem);margin:0 0 .6rem}
     .kicker{color:#5a4d42;font-weight:600;letter-spacing:.2px}
-    .hero{display:grid;gap:1rem;grid-template-columns:1.1fr .9fr;align-items:start;padding:1rem 0;grid-auto-rows:auto}.
-.hero .hero-photo{grid-column:2;grid-row:2 / span 3}.
-@media (max-width:900px){.hero .hero-photo{grid-column:auto;grid-row:auto}}
+
+    /* HERO */
+    .hero{display:grid;gap:1rem;grid-template-columns:1.1fr .9fr;align-items:start;padding:1rem 0;grid-auto-rows:auto}
+    .hero .hero-photo{grid-column:2;grid-row:2 / span 3}
+    @media (max-width:900px){.hero .hero-photo{grid-column:auto;grid-row:auto}}
     .hero img{width:100%;height:auto;border-radius:1rem;object-fit:cover}
-    .hero .hero-banner{grid-column:1 / -1;display:block;width:100%;height:220px;object-fit:cover;border-radius:12px;margin:0 0 .8rem}
-    @media (max-width:900px){.hero .hero-banner{height:180px}}
-    @media (max-width:900px){.hero{grid-template-columns:1fr}}
+
+    /* >>> Opción 1 aplicada aquí <<< */
+    .hero .hero-banner{
+      grid-column:1 / -1;
+      display:block;
+      width:100%;
+      height:280px;                 /* antes 220px */
+      object-fit:cover;
+      object-position:center 40%;   /* centra el logo mejor */
+      border-radius:12px;
+      margin:0 0 .8rem;
+    }
+    @media (max-width:900px){
+      .hero .hero-banner{
+        height:200px;               /* antes 180px */
+        object-position:center 40%;
+      }
+    }
+
     /* Nueva franja bajo el hero en 2 columnas */
     .below{display:grid;gap:1rem;grid-template-columns:1.1fr .9fr;align-items:start;margin-top:.4rem}
     @media (max-width:900px){.below{grid-template-columns:1fr}}
@@ -38,13 +56,9 @@
     .grid--2{grid-template-columns:repeat(2,1fr)}
     @media (max-width:900px){.grid--3,.grid--2{grid-template-columns:1fr}}
     .card{background:#fff;border:1px solid #eee;border-radius:1rem;padding:1rem;box-shadow:0 6px 16px rgba(0,0,0,.05)}
-    /* Variante compacta para tarjetas específicas */
-    .card--tight{padding:.7rem 1rem}
-    .card--tight h2{margin:.08rem 0 .35rem;font-size:1.32rem}
-    .card--tight p{margin:.3rem 0;font-size:1rem}
-    .card--tight .why{font-size:1rem;line-height:1.5}
-    .card--tight .why li{margin:.24rem 0}
-    /* Separación global entre bloques */
+    .card--tight{padding:.85rem 1.05rem}
+    .card--tight h2{margin:.12rem 0 .45rem;font-size:1.34rem}
+    .card--tight .why li{margin:.28rem 0}
     main section + section{margin-top:1.4rem}
     main .card + .card{margin-top:1.1rem}
     .below{margin-top:1.2rem}
@@ -64,8 +78,9 @@
     @media (max-width:900px){.loc{grid-template-columns:1fr}}
     iframe{border:0;border-radius:.6rem}
     .note{font-size:.92rem;color:#5a4d42}
-    /* Cookie banner simple (necesarias + GA4) */
-    .cb{position:fixed;left:1rem;right:1rem;bottom:1rem;background:#fff;border:1px solid #eee;border-radius:.8rem;box-shadow:0 10px 30px rgba(0,0,0,.12);padding:1rem;z-index:9999;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Lato,sans-serif}
+
+    /* Cookie banner simple */
+    .cb{position:fixed;left:1rem;right:1rem;bottom:1rem;background:#fff;border:1px solid #eee;border-radius:.8rem;box-shadow:0 10px 30px rgba(0,0,0,.12);padding:1rem;z-index:9999}
     .cact{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.6rem}
     .cact .p{background:#8B6C4A;color:#fff;border:none;padding:.6rem .9rem;border-radius:.5rem}
     .cact button{background:#f1ebe4;border:1px solid #e3dbd0;padding:.6rem .9rem;border-radius:.5rem;cursor:pointer}
@@ -93,6 +108,7 @@
         <h1>Where your body finds balance</h1>
         <p class="lead">Masaje profesional adaptado a ti. Agenda fácil y sin esperas.</p>
         <p><a class="btn" href="/reserva.html">Reservar ahora</a> <a class="btn alt" href="/servicios.html">Ver servicios</a></p>
+
         <section class="card card--tight" aria-label="Por qué elegirnos" style="margin-top:.5rem">
           <h2>Por qué elegirnos</h2>
           <ul class="why">
@@ -101,11 +117,13 @@
             <li><strong>Higiene y material profesional:</strong> camilla estable y aceites hipoalergénicos.</li>
           </ul>
         </section>
+
         <section class="card card--tight" aria-label="Perfil profesional" style="margin-top:1rem">
           <h2>Perfil profesional</h2>
           <p><strong>Maria Florencia Rame — Terapeuta manual.</strong><br>Un espacio para soltar, respirar y volver a sentirte bien en tu cuerpo. La combinación de maniobras lentas y presión ajustada ayuda a relajar la musculatura y calmar el ritmo interno, dejando una sensación de descanso y bienestar.</p>
         </section>
       </div>
+
       <div class="hero-photo">
         <img src="/assets/img/home.jpg" alt="Camilla de masaje y ambiente relajante" loading="eager" />
       </div>
@@ -161,7 +179,7 @@
       <p class="note" style="margin:.4rem 0 0">¿Quieres dejar tu reseña? <a href="https://g.page/r/XXXXXXXX" target="_blank" rel="noopener">Abre Google</a>.</p>
     </section>
 
-    <!-- GALERÍA (3 imágenes verticales una al lado de otra) -->
+    <!-- GALERÍA -->
     <section aria-label="Galería">
       <div class="gallery">
         <img src="/assets/img/hoja.jpg" alt="Detalle de hoja verde" loading="lazy" />
@@ -193,7 +211,7 @@
     </div>
   </footer>
 
-  <!-- Banner simple de cookies (necesarias + GA4) -->
+  <!-- Banner de cookies (necesarias + GA4) -->
   <div id="cb" class="cb" role="dialog" aria-live="polite" aria-label="Aviso de cookies" hidden>
     <p>Usamos cookies <strong>necesarias</strong> para que la web funcione y, si aceptas, cookies <strong>analíticas (GA4)</strong> para mejorarla.</p>
     <div class="cact">
