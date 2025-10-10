@@ -22,7 +22,9 @@
     h1{font-size:clamp(1.8rem,4.8vw,3rem);margin:.2rem 0 .4rem}
     h2{font-size:clamp(1.2rem,2.5vw,1.6rem);margin:0 0 .6rem}
     .kicker{color:#5a4d42;font-weight:600;letter-spacing:.2px}
-    .hero{display:grid;gap:1rem;grid-template-columns:1.1fr .9fr;align-items:center;padding:1rem 0}
+    .hero{display:grid;gap:1rem;grid-template-columns:1.1fr .9fr;align-items:start;padding:1rem 0;grid-auto-rows:auto}.
+.hero .hero-photo{grid-column:2;grid-row:2 / span 3}.
+@media (max-width:900px){.hero .hero-photo{grid-column:auto;grid-row:auto}}
     .hero img{width:100%;height:auto;border-radius:1rem;object-fit:cover}
     .hero .hero-banner{grid-column:1 / -1;display:block;width:100%;height:220px;object-fit:cover;border-radius:12px;margin:0 0 .8rem}
     @media (max-width:900px){.hero .hero-banner{height:180px}}
@@ -85,16 +87,7 @@
         <h1>Where your body finds balance</h1>
         <p class="lead">Masaje profesional adaptado a ti. Agenda fácil y sin esperas.</p>
         <p><a class="btn" href="/reserva.html">Reservar ahora</a> <a class="btn alt" href="/servicios.html">Ver servicios</a></p>
-      </div>
-      <div>
-        <img src="/assets/img/home.jpg" alt="Camilla de masaje y ambiente relajante" loading="eager" />
-      </div>
-    </section>
-
-    <!-- BLOQUES BAJO EL HERO EN COLUMNA IZQUIERDA -->
-    <section class="below" aria-label="Bloques intro">
-      <div>
-        <section class="card" aria-label="Por qué elegirnos">
+        <section class="card" aria-label="Por qué elegirnos" style="margin-top:.5rem">
           <h2>Por qué elegirnos</h2>
           <ul class="why">
             <li><strong>Tratamiento a medida:</strong> evaluación rápida + plan por objetivos.</li>
@@ -107,7 +100,9 @@
           <p><strong>Maria Florencia Rame — Terapeuta manual.</strong><br>Un espacio para soltar, respirar y volver a sentirte bien en tu cuerpo. La combinación de maniobras lentas y presión ajustada ayuda a relajar la musculatura y calmar el ritmo interno, dejando una sensación de descanso y bienestar.</p>
         </section>
       </div>
-      <div><!-- columna derecha vacía para alinear con la foto del hero --></div>
+      <div class="hero-photo">
+        <img src="/assets/img/home.jpg" alt="Camilla de masaje y ambiente relajante" loading="eager" />
+      </div>
     </section>
 
     <!-- SERVICIOS DESTACADOS -->
