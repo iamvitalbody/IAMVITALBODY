@@ -38,6 +38,8 @@
     .grid--2{grid-template-columns:repeat(2,1fr)}
     @media (max-width:900px){.grid--3,.grid--2{grid-template-columns:1fr}}
     .card{background:#fff;border:1px solid #eee;border-radius:1rem;padding:1rem;box-shadow:0 6px 16px rgba(0,0,0,.05)}
+    /* Variante compacta para tarjetas específicas */
+    .card--tight{padding:.7rem .9rem}
     /* Separación global entre bloques */
     main section + section{margin-top:1.4rem}
     main .card + .card{margin-top:1.1rem}
@@ -87,7 +89,7 @@
         <h1>Where your body finds balance</h1>
         <p class="lead">Masaje profesional adaptado a ti. Agenda fácil y sin esperas.</p>
         <p><a class="btn" href="/reserva.html">Reservar ahora</a> <a class="btn alt" href="/servicios.html">Ver servicios</a></p>
-        <section class="card" aria-label="Por qué elegirnos" style="margin-top:.5rem">
+        <section class="card card--tight" aria-label="Por qué elegirnos" style="margin-top:.5rem">
           <h2>Por qué elegirnos</h2>
           <ul class="why">
             <li><strong>Tratamiento a medida:</strong> evaluación rápida + plan por objetivos.</li>
@@ -95,7 +97,7 @@
             <li><strong>Higiene y material profesional:</strong> camilla estable y aceites hipoalergénicos.</li>
           </ul>
         </section>
-        <section class="card" aria-label="Perfil profesional" style="margin-top:1rem">
+        <section class="card card--tight" aria-label="Perfil profesional" style="margin-top:1rem">
           <h2>Perfil profesional</h2>
           <p><strong>Maria Florencia Rame — Terapeuta manual.</strong><br>Un espacio para soltar, respirar y volver a sentirte bien en tu cuerpo. La combinación de maniobras lentas y presión ajustada ayuda a relajar la musculatura y calmar el ritmo interno, dejando una sensación de descanso y bienestar.</p>
         </section>
