@@ -24,7 +24,7 @@
     .kicker{color:#5a4d42;font-weight:600;letter-spacing:.2px}
     .hero{display:grid;gap:1rem;grid-template-columns:1.1fr .9fr;align-items:center;padding:1rem 0}
     .hero img{width:100%;height:auto;border-radius:1rem;object-fit:cover}
-    .hero .hero-banner{width:100%;height:220px;border-radius:1rem;object-fit:cover;display:block;margin-bottom:.6rem}
+    .hero .hero-banner{display:block;width:100vw;max-width:100vw;height:260px;object-fit:cover;margin:0 calc(50% - 50vw) .8rem;border-radius:0} @media (max-width:900px){.hero .hero-banner{height:200px}}
     @media (max-width:900px){.hero .hero-banner{height:180px}}
     @media (max-width:900px){.hero{grid-template-columns:1fr}}
     /* Nueva franja bajo el hero en 2 columnas */
