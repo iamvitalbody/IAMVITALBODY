@@ -1,87 +1,114 @@
-<!doctype html><html lang="es-ES"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Reserva | IAMVITALBODY</title><meta name="description" content="Agenda online y realiza el pago de forma segura."/>
-<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml"/>
-<style>
-:root{--bg:#F7F4EF;--tx:#3E2F25;--pri:#C7A17A;--sec:#8B6C4A}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Lato,sans-serif}
-.container{width:min(1100px,92vw);margin:auto} header,footer{background:var(--bg);border-bottom:1px solid #e7e1d7}
-.row{display:flex;justify-content:space-between;align-items:center;padding:.9rem 0}
-.logo{font-weight:700;color:var(--sec);text-decoration:none}
-.nav{display:flex;gap:1rem;flex-wrap:wrap} .nav a{color:var(--tx);text-decoration:none;padding:.5rem .6rem;border-radius:.6rem}
-.nav a:hover{background:#ece6dc} .btn{display:inline-block;background:var(--sec);color:#fff;text-decoration:none;padding:.7rem 1rem;border-radius:.6rem;font-weight:600}
-.card{background:#fff;border:1px solid #eee;border-radius:1rem;padding:1rem;box-shadow:0 6px 16px rgba(0,0,0,.05)}
-h1{font-size:clamp(1.7rem,4vw,2.5rem)}
-</style></head><body>
-<header><div class="container row"><a class="logo" href="/">IAMVITALBODY</a>
-<nav class="nav"><a href="/servicios.html">Servicios</a><a href="/tarifas.html">Tarifas</a><a href="/faqs.html">FAQs</a><a class="btn" href="/reserva.html">Reserva</a></nav>
-</div></header><main class="container" tabindex="-1" style="padding:1.2rem 0 2rem">
-<h1>Reserva</h1>
-<div style="display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
-  <section class="card"><h2>Calendly (online)</h2><iframe title="Calendly" src="https://calendly.com/iamvitalbody/masaje" style="width:100%;height:650px;border:0;border-radius:.6rem"></iframe></section>
-  <section class="card"><h2>Pago total (Stripe)</h2><iframe title="Stripe Checkout" src="https://buy.stripe.com/eVqcMZ7T11zd63r3oagA800" style="width:100%;height:650px;border:0;border-radius:.6rem"></iframe></section>
-</div>
-</main><footer style="border-top:1px solid #e7e1d7"><div class="container" style="padding:1rem 0">
-<p><strong>IAMVITALBODY</strong> · Avenida de la Albufera 7 (solo con cita), 28701 San Sebastián de los Reyes, Madrid · Tel: <a href="tel:+34645149307">+34 645 149 307</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="/cookies.html">Cookies</a></p>
-</div></footer>
-<!-- Cookie banner + modal (necesarias + analíticas GA4) -->
-<style>
-.cb,.cm{font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Lato,sans-serif}
-.cb{position:fixed;left:1rem;right:1rem;bottom:1rem;background:#fff;border:1px solid #eee;border-radius:.8rem;box-shadow:0 10px 30px rgba(0,0,0,.12);padding:1rem;z-index:9999}
-.cact{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.6rem}
-.cact .p{background:#8B6C4A;color:#fff;border:none;padding:.6rem .9rem;border-radius:.5rem}
-.cact button{background:#f1ebe4;border:1px solid #e3dbd0;padding:.6rem .9rem;border-radius:.5rem;cursor:pointer}
-.cm{position:fixed;inset:0;background:rgba(0,0,0,.4);display:grid;place-items:center;z-index:10000}
-.card{background:#fff;max-width:520px;width:92vw;border-radius:.8rem;padding:1rem;border:1px solid #eee;box-shadow:0 20px 50px rgba(0,0,0,.18)}
-.tg{display:flex;align-items:center;gap:.6rem;margin:.5rem 0}
-.rev{position:fixed;right:1rem;bottom:1rem;background:#fff;border:1px solid #eee;padding:.45rem .7rem;border-radius:.5rem}
-</style>
-<div id="cb" class="cb" role="dialog" aria-live="polite" aria-label="Aviso de cookies" hidden>
-  <p>Usamos cookies <strong>necesarias</strong> para que la web funcione y, si aceptas, cookies <strong>analíticas (GA4)</strong> para mejorarla. Puedes cambiar tu elección en cualquier momento.</p>
-  <div class="cact">
-    <button data-a="r">Rechazar</button>
-    <button data-a="c">Personalizar</button>
-    <button data-a="a" class="p">Aceptar todo</button>
-  </div>
-</div>
-<div id="cm" class="cm" role="dialog" aria-modal="true" aria-labelledby="cmt" hidden>
-  <div class="card">
-    <h2 id="cmt">Preferencias de cookies</h2>
-    <label class="tg"><input type="checkbox" checked disabled><span>Necesarias</span></label>
-    <label class="tg"><input type="checkbox" id="ga"><span>Analíticas (Google Analytics 4)</span></label>
+<!doctype html>
+<html lang="es-ES">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reserva tu cita | IAMVITALBODY</title>
+  <meta name="description" content="Reserva online tu sesión de masaje en IAMVITALBODY (San Sebastián de los Reyes). Agenda por Calendly y paga con Stripe si lo deseas." />
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+  <style>
+    :root{--c-bg:#F7F4EF;--c-text:#3E2F25;--c-prim:#C7A17A;--c-sec:#8B6C4A;--c-cta:#A8B5A2}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--c-bg);color:var(--c-text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Lato,sans-serif}
+    .container{width:min(1120px,92vw);margin:auto}
+    header,footer{border-bottom:1px solid #e7e1d7}
+    .row{display:flex;justify-content:space-between;align-items:center;padding:.9rem 0}
+    .logo{font-weight:700;color:var(--c-sec);text-decoration:none}
+    .nav{display:flex;gap:1rem;flex-wrap:wrap}
+    .nav a{color:var(--c-text);text-decoration:none;padding:.5rem .6rem;border-radius:.6rem}
+    .nav a:hover{background:#ece6dc}
+    .btn{display:inline-block;background:var(--c-sec);color:#fff;text-decoration:none;padding:.7rem 1rem;border-radius:.6rem;font-weight:600}
+    .btn--ghost{background:#A8B5A2;color:#1e1a16}
+    .hero{display:grid;gap:1rem;align-items:start;padding:1.2rem 0;grid-template-columns:1fr}
+    @media(min-width:980px){.hero{grid-template-columns:1.2fr .8fr}}
+    h1{font-size:clamp(1.7rem,4vw,2.5rem);margin:.2rem 0 .4rem}
+    h2{font-size:1.2rem;margin:0 0 .3rem}
+    .card{background:#fff;border:1px solid #eee;border-radius:1rem;padding:1rem;box-shadow:0 6px 16px rgba(0,0,0,.05)}
+    .note{font-size:.92rem;color:#5a4d42}
+    iframe{border:0;border-radius:.6rem}
+    .grid{display:grid;gap:1rem}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container row">
+      <a class="logo" href="/">IAMVITALBODY</a>
+      <nav class="nav" aria-label="Principal">
+        <a href="/servicios.html">Servicios</a>
+        <a href="/tarifas.html">Tarifas</a>
+        <a href="/faqs.html">FAQs</a>
+        <a aria-current="page" class="btn" href="/reserva.html">Reserva</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" tabindex="-1" style="padding:1rem 0 2rem">
+    <section class="hero" aria-label="Reserva online">
+      <div class="card">
+        <h1>Reserva tu cita</h1>
+        <p class="note">Dirección: <strong>Avenida de la Albufera 7 (solo con cita), 28701 San Sebastián de los Reyes, Madrid</strong>. Horario: <strong>10:00–17:00 (lun–vie)</strong>.</p>
+        <p class="note">1) Elige día y hora en el calendario. 2) Confirma tus datos. 3) Opcionalmente, paga ahora o al llegar.</p>
+        <div style="min-height:680px">
+          <iframe title="Calendario de reservas" src="https://calendly.com/iamvitalbody/masaje?hide_landing_page_details=1&hide_gdpr_banner=1" width="100%" height="680" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <aside class="grid">
+        <div class="card">
+          <h2>Pago online</h2>
+          <p>Si prefieres, puedes completar el pago ahora mismo online.</p>
+          <p><a class="btn" href="https://buy.stripe.com/eVqcMZ7T11zd63r3oagA800" target="_blank" rel="noopener">Pagar ahora</a></p>
+          <p class="note">También aceptamos <strong>tarjeta o efectivo</strong> al llegar.</p>
+        </div>
+        <div class="card">
+          <h2>¿Dudas antes de reservar?</h2>
+          <p>Escríbenos por WhatsApp y te ayudamos a escoger la sesión que mejor encaja con tu objetivo.</p>
+          <p><a class="btn btn--ghost" href="https://wa.me/34645149307?text=Hola%20IAMVITALBODY%2C%20quisiera%20consultar%20disponibilidad%20y%20tipos%20de%20masaje" target="_blank" rel="noopener">WhatsApp</a></p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer style="border-top:1px solid #e7e1d7">
+    <div class="container" style="padding:1rem 0">
+      <p><strong>IAMVITALBODY</strong> · Avenida de la Albufera 7 (solo con cita), 28701 San Sebastián de los Reyes, Madrid · Tel: <a href="tel:+34645149307">+34 645 149 307</a> · <a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="/cookies.html">Cookies</a></p>
+    </div>
+  </footer>
+
+  <!-- Banner simple de cookies (necesarias + GA4) -->
+  <style>
+    .cb{position:fixed;left:1rem;right:1rem;bottom:1rem;background:#fff;border:1px solid #eee;border-radius:.8rem;box-shadow:0 10px 30px rgba(0,0,0,.12);padding:1rem;z-index:9999;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Lato,sans-serif}
+    .cact{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.6rem}
+    .cact .p{background:#8B6C4A;color:#fff;border:none;padding:.6rem .9rem;border-radius:.5rem}
+    .cact button{background:#f1ebe4;border:1px solid #e3dbd0;padding:.6rem .9rem;border-radius:.5rem;cursor:pointer}
+  </style>
+  <div id="cb" class="cb" role="dialog" aria-live="polite" aria-label="Aviso de cookies" hidden>
+    <p>Usamos cookies <strong>necesarias</strong> para que la web funcione y, si aceptas, cookies <strong>analíticas (GA4)</strong> para mejorarla.</p>
     <div class="cact">
-      <button data-a="s">Guardar</button>
-      <button data-a="x">Cerrar</button>
+      <button data-a="r">Rechazar</button>
+      <button data-a="a" class="p">Aceptar todo</button>
     </div>
   </div>
-</div>
-<button id="rv" type="button" class="rev" hidden>Revisar cookies</button>
-<script>
-(function(){
-  const K='consent_status_v2', GAID='G-F38W0FJS39';
-  const $b=document.getElementById('cb'), $m=document.getElementById('cm'), $r=document.getElementById('rv');
-  const $ga=()=>document.getElementById('ga');
-  const get=()=>{try{return JSON.parse(localStorage.getItem(K)||'');}catch(e){return null;}};
-  const set=v=>localStorage.setItem(K, JSON.stringify(v));
-  function loadGA(){
-    if(!GAID) return; if(document.getElementById('ga4-base')) return;
-    const s=document.createElement('script'); s.async=true; s.id='ga4-base';
-    s.src='https://www.googletagmanager.com/gtag/js?id='+GAID; document.head.appendChild(s);
-    window.dataLayer=window.dataLayer||[]; function gtag(){dataLayer.push(arguments);} window.gtag=gtag;
-    gtag('js', new Date()); gtag('config', GAID, { anonymize_ip:true });
-  }
-  function apply(){ const c=get(); if(c){ $b.hidden=true; $r.hidden=false; if(c.analytics) loadGA(); } else { $b.hidden=false; } }
-  document.addEventListener('click',e=>{
-    const a=e.target?.dataset?.a; if(!a) return;
-    if(a==='a'){ set({necessary:true,analytics:true}); apply(); $m.hidden=true; }
-    if(a==='r'){ set({necessary:true,analytics:false}); apply(); $m.hidden=true; }
-    if(a==='c'){ const c=get()||{necessary:true,analytics:false}; const g=$ga(); if(g) g.checked=!!c.analytics; $m.hidden=false; }
-    if(a==='s'){ const v=!!$ga()?.checked; set({necessary:true,analytics:v}); apply(); $m.hidden=true; }
-    if(a==='x'){ $m.hidden=true; }
-  });
-  window.addEventListener('openConsent',()=>{$m.hidden=false;});
-  $r?.addEventListener('click',()=>{$m.hidden=false;});
-  apply();
-})();
-</script>
-</body></html>
+  <script>
+  (function(){
+    const K='consent_status_v2', GAID='G-F38W0FJS39';
+    const $b=document.getElementById('cb');
+    const get=()=>{try{return JSON.parse(localStorage.getItem(K)||'');}catch(e){return null;}};
+    const set=v=>localStorage.setItem(K, JSON.stringify(v));
+    function loadGA(){
+      if(!GAID) return; if(document.getElementById('ga4-base')) return;
+      const s=document.createElement('script'); s.async=true; s.id='ga4-base';
+      s.src='https://www.googletagmanager.com/gtag/js?id='+GAID; document.head.appendChild(s);
+      window.dataLayer=window.dataLayer||[]; function gtag(){dataLayer.push(arguments);} window.gtag=gtag;
+      gtag('js', new Date()); gtag('config', GAID, { anonymize_ip:true });
+    }
+    function apply(){ const c=get(); if(c){ $b.hidden=true; if(c.analytics) loadGA(); } else { $b.hidden=false; } }
+    document.addEventListener('click',e=>{
+      const a=e.target?.dataset?.a; if(!a) return;
+      if(a==='a'){ set({necessary:true,analytics:true}); apply(); }
+      if(a==='r'){ set({necessary:true,analytics:false}); apply(); }
+    });
+    apply();
+  })();
+  </script>
+</body>
+</html>
