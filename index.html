@@ -19,8 +19,8 @@
     .nav a:hover{background:#ece6dc}
     .btn{display:inline-block;background:var(--c-sec);color:#fff;text-decoration:none;padding:.7rem 1rem;border-radius:.6rem;font-weight:600}
     .btn--ghost{background:#A8B5A2;color:#1e1a16}
-    .hero{display:grid;gap:1.2rem;align-items:center;padding:1.2rem 0;grid-template-columns:1fr;}@media(min-width:900px){.hero{grid-template-columns:1fr auto;}}
-    .hero img{width:min(420px,45vw);height:auto;object-fit:contain;border-radius:1rem;box-shadow:0 10px 30px rgba(0,0,0,.08);justify-self:center;}
+    .hero{display:grid;gap:1.2rem;align-items:start;padding:.6rem 0 .8rem;grid-template-columns:1fr;}@media(min-width:900px){.hero{grid-template-columns:1.1fr auto;}}@media(min-width:900px){.hero{grid-template-columns:1fr auto;}}
+    .hero img{width:min(460px,45vw);height:auto;object-fit:contain;border-radius:1rem;box-shadow:0 10px 30px rgba(0,0,0,.08);justify-self:center;align-self:start;}
     .kicker{display:inline-block;background:var(--c-prim);color:#2b2119;padding:.2rem .6rem;border-radius:999px;font-weight:600}
     h1{font-size:clamp(1.8rem,4vw,2.8rem);margin:.4rem 0 .6rem}
     h2{font-size:1.4rem;margin:0 0 .3rem}
@@ -39,6 +39,8 @@
     .quotes{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
     .quote{background:#fff;border:1px solid #eee;border-radius:1rem;padding:1rem}
     .quote small{color:#6b5c51}
+  .mini{display:grid;gap:.8rem;margin-top:.6rem}
+    @media(min-width:900px){.mini.two{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
@@ -65,11 +67,19 @@
           <a class="btn" href="/reserva.html">Reservar ahora</a>
           <a class="btn btn--ghost" href="https://wa.me/34645149307?text=Hola%20IAMVITALBODY%20%F0%9F%91%8B" target="_blank" rel="noopener">WhatsApp</a>
         </p>
+        <div class="mini two">
+          <section class="card" aria-label="Por qué elegirnos" style="margin:0;padding:.6rem">
+            <h2 style="margin-top:0">Por qué elegirnos</h2>
+            <ul class="bullets" style="margin-bottom:0">
+              <li><strong>Tratamiento a medida</strong>: evaluación rápida + plan por objetivos.</li>
+              <li><strong>Presión y técnicas</strong> ajustadas a tu tolerancia.</li>
+              <li><strong>Higiene y material profesional</strong> (camilla, aceites hipoalergénicos).</li>
+            </ul>
+          </section>
+        </div>
       </div>
       <img src="/assets/img/home.jpg" alt="Manos realizando masaje relajante" />
-    </section>
-
-    <!-- SERVICIOS DESTACADOS (sin precios) -->
+    </section><!-- SERVICIOS DESTACADOS (sin precios) -->
     <section class="card" aria-label="Servicios destacados">
       <h2>Servicios destacados</h2>
       <div class="grid grid--3" style="margin-top:.6rem">
@@ -91,17 +101,6 @@
       </div>
       <p class="meta" style="margin-top:.6rem">Consulta el detalle de todos los servicios en <a href="/servicios.html">Servicios</a>. Los precios están en <a href="/tarifas.html">Tarifas</a>.</p>
     </section>
-
-    <!-- POR QUÉ ELEGIRNOS -->
-    <section class="card" style="margin-top:1rem" aria-label="Por qué elegirnos">
-      <h2>Por qué elegirnos</h2>
-      <ul class="bullets">
-        <li><strong>Tratamiento a medida</strong>: evaluación rápida + plan por objetivos.</li>
-        <li><strong>Presión y técnicas</strong> ajustadas a tu tolerancia.</li>
-        <li><strong>Higiene y material profesional</strong> (camilla, aceites hipoalergénicos).</li>
-      </ul>
-    </section>
-
     <!-- METODOLOGÍA EN 3 PASOS -->
     <section class="card" style="margin-top:1rem" aria-label="Metodología">
       <h2>Metodología en 3 pasos</h2>
@@ -110,9 +109,7 @@
         <div class="step"><h3><span>2</span>Sesión focalizada</h3><p>50 min (25 min en facial) orientada a resultado, con técnica y presión adecuadas.</p></div>
         <div class="step"><h3><span>3</span>Recomendaciones post-sesión</h3><p>Indicaciones de auto-cuidado y estiramientos para mantener el efecto.</p></div>
       </div>
-    </section>
-
-    <!-- PRUEBA SOCIAL -->
+    </section><!-- PRUEBA SOCIAL -->
     <section class="card" style="margin-top:1rem" aria-label="Opiniones">
       <h2>Opiniones</h2>
       <div class="quotes">
