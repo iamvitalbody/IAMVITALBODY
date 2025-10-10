@@ -19,7 +19,7 @@
     .nav a:hover{background:#ece6dc}
     .btn{display:inline-block;background:var(--c-sec);color:#fff;text-decoration:none;padding:.7rem 1rem;border-radius:.6rem;font-weight:600;text-align:center}
     .btn:hover{filter:brightness(0.95)}
-    /* Botones del selector: mismo alto/ancho */
+    /* Botones del selector */
     [data-cal].btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:48px;height:auto;white-space:normal;text-align:center;padding:.6rem .9rem;border-radius:.6rem;font-size:1rem;line-height:1.2}
     @media (max-width:700px){ .grid.tile-grid{grid-template-columns:1fr} [data-cal].btn{min-height:56px;height:auto;width:100%} }
     h1{font-size:clamp(1.7rem,4vw,2.5rem);margin:1rem 0 .6rem}
@@ -31,11 +31,9 @@
     .note{font-size:.92rem;color:#5a4d42}
     .list{margin:0;padding-left:1.1rem}
     iframe{border:0;border-radius:.6rem}
-  /* Fuerza altura del widget de Calendly y evita que estire la tarjeta */
-  
-  h2{font-size:1.05rem;margin:.1rem 0 .5rem}
-  .map-embed{width:100%;height:220px;border:0;border-radius:.6rem}
-  @media (max-width:700px){.map-embed{height:200px}}
+    h2{font-size:1.05rem;margin:.1rem 0 .5rem}
+    .map-embed{width:100%;height:220px;border:0;border-radius:.6rem}
+    @media (max-width:700px){.map-embed{height:200px}}
   </style>
 </head>
 <body>
@@ -58,7 +56,7 @@
     <section class="grid grid--2" style="align-items:start" aria-label="Agenda y datos prácticos">
       <div class="card">
         <h2 style="margin:.2rem 0 .8rem">Elige tu servicio</h2>
-        <!-- Selector en el orden solicitado (2 columnas fijas) -->
+        <!-- Selector (2 columnas) -->
         <div class="grid tile-grid" style="gap:.5rem">
           <button class="btn" data-cal="https://calendly.com/iamvitalbody/masaje-relajante">Relajante · 50 min</button>
           <button class="btn" data-cal="https://calendly.com/iamvitalbody/masaje-descontracturante">Descontracturante · 50 min</button>
@@ -82,9 +80,10 @@
           <li><strong>Dirección:</strong> Avenida de la Albufera 7, 28701 San Sebastián de los Reyes, Madrid.</li>
           <li><strong>Contacto:</strong> <a href="tel:+34645149307">+34 645 149 307</a> · <a href="https://wa.me/34645149307?text=Hola%20IAMVITALBODY%20%F0%9F%91%8B%20quisiera%20agendar%20una%20cita" target="_blank" rel="noopener">WhatsApp</a></li>
         </ul>
-        </aside>
+      </aside>
     </section>
-    <!-- Mapa a ancho de contenido -->
+
+    <!-- Mapa (mismo ancho que el contenido) -->
     <section aria-label="Mapa" style="margin-top:.8rem">
       <iframe class="map-embed" title="Mapa Avenida de la Albufera 7, 28701 San Sebastián de los Reyes" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Avenida%20de%20la%20Albufera%207%2C%2028701%20San%20Sebasti%C3%A1n%20de%20los%20Reyes&output=embed"></iframe>
     </section>
@@ -98,7 +97,7 @@
 
   <!-- Banner simple de cookies (necesarias + GA4) -->
   <style>
-    .cb{position:fixed;left:1rem;right:1rem;bottom:1rem;background:#fff;border:1px solid #eee;border-radius:.8rem;box-shadow:0 10px 30px rgba(0,0,0,.12);padding:1rem;z-index:9999;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Lato,sans-serif} 
+    .cb{position:fixed;left:1rem;right:1rem;bottom:1rem;background:#fff;border:1px solid #eee;border-radius:.8rem;box-shadow:0 10px 30px rgba(0,0,0,.12);padding:1rem;z-index:9999;font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Lato,sans-serif}
     @media (max-width:700px){.cb{left:1rem;right:1rem;max-width:none}}
     .cact{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.6rem}
     .cact .p{background:#8B6C4A;color:#fff;border:none;padding:.6rem .9rem;border-radius:.5rem}
@@ -136,11 +135,14 @@
     apply();
   })();
   </script>
+
+  <!-- Calendly popup -->
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
   <script>
     // Abrir Calendly como popup al pulsar un botón de servicio
     document.addEventListener('click', (e)=>{
       const b = e.target.closest('[data-cal]');
-      if (!b) return; 
+      if (!b) return;
       e.preventDefault();
       if (window.Calendly && Calendly.initPopupWidget) {
         Calendly.initPopupWidget({ url: b.dataset.cal });
